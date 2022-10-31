@@ -10,7 +10,6 @@ import SwiftUI
 struct PokemonDetailView: View {
     @EnvironmentObject var vm: ViewModel
     let pokemon: Pokemon
-   // let pokemonDetails: DetailPokemon
     
     var body: some View {
         NavigationView{
@@ -26,9 +25,7 @@ struct PokemonDetailView: View {
                 Section(header: Text("ABILITIES")) {
                     
                     Text("**ID**: \(vm.getPokemonIndex(pokemon: pokemon))")
-//                    Text("**Weight**: \(vm.formatHW(value: vm.pokemonDetails?.weight ?? 0)) KG")
-//                    Text("**Height**: \(vm.formatHW(value: vm.pokemonDetails?.height ?? 0)) M")
-                    Text("**Weight**: \(vm.formatHW(value: vm.pokemonDetails?.weight)) KG")
+                    Text("**Weight**: \(vm.formatHW(value: vm.pokemonDetails?.weight ?? 0)) KG")
                     Text("**Height**: \(vm.formatHW(value: vm.pokemonDetails?.height ?? 0)) M")
                 }
             }

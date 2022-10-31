@@ -33,8 +33,13 @@ class ViewModel: ObservableObject {
         return 0
     }
     
-//    func getTypes(detailpokemon: DetailPokemon) -> String {
-//
+    
+//    func getTypes(pokemonType: PokemonType) -> String {
+//        ForEach(pokemonType.name){
+//            var name = pokemonType.name
+//            return name
+//        }
+//        return ""
 //    }
     
     // Get specific details for a pokemon

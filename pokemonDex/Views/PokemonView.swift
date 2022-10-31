@@ -20,6 +20,19 @@ struct PokemonView: View {
                     Text("\(pokemon.name.capitalized)")
                         .font(.system(size: 16, weight: .regular, design: .monospaced))
                         .padding()
+                    
+                    // Debug Print qui me renvoi nil. Mon type est vide ?
+                        .onAppear{
+                            print(vm.pokemonDetails?.types[0])
+                        }
+                    if let sType = vm.pokemonDetails?.types{
+                        ForEach(sType, id: \.self) { type in
+                            Text("type: \(type.type.name)")
+                            // .onAppear{
+                            // print(type.slot)
+                            //}
+                        }
+                    }
                 }
             }
         }

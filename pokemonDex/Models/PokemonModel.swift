@@ -25,19 +25,19 @@ struct DetailPokemon: Codable {
     let id: Int
     let height: Int
     let weight: Int
-    let abilities: [Abilities]
+//    let abilities: [Abilities]
     let types: [TypeCore]
 }
 
-struct Abilities: Decodable {
-
-    let ability: Ability
-}
-
-struct Ability: Decodable {
-
-    let name: String
-}
+//struct Abilities: Decodable {
+//
+//    let ability: Ability
+//}
+//
+//struct Ability: Decodable {
+//
+//    let name: String
+//}
 
 struct PokemonType: Codable, Hashable {
     let name: String
@@ -50,15 +50,15 @@ struct TypeCore: Codable, Hashable {
     let type: PokemonType
 
     // The type keys are IDs
-    let typeId: String
-    enum CodingKeys: CodingKey {
-        case slot, type
-    }
-   
+//    let typeId: String
+//    enum CodingKeys: CodingKey {
+//        case slot, type
+//    }
+//
     init(from decoder: Decoder) throws {
         let container = try decoder.container (keyedBy: CodingKeys.self)
         slot = try container.decode (Int.self, forKey: CodingKeys.slot)
         type = try container.decode(PokemonType.self, forKey: CodingKeys.type)
-        typeId = container.codingPath.first!.stringValue
+ //       typeId = container.codingPath.first!.stringValue
     }
 }
